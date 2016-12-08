@@ -1,0 +1,7 @@
+
+main: #4c4c4c
+section style3: #b3b3b3
+
+yellow: #d7c328
+
+client id 6rwxu0jdtxuhhgzqszxilv1jw6uhlv
