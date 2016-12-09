@@ -2493,6 +2493,9 @@
 		header.alt nav#nav ul li a:hover {
 			color: white;
 		}
+		#header {
+			z-index: 40;
+		}
 		#header.reveal {
 			z-index: 40;
 		}
