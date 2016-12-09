@@ -40,7 +40,7 @@ $.ajax({
 	   
 		var str2 = thumbRaw.split("-");
 		var noRes = str2[0] + "-" + str2[1];
-		var thumbHD = noRes + "-400x225.jpg"
+		var thumbHD = noRes + "-1280x720.jpg"
    document.getElementById('vod1link').onclick = function() { 
 		PopupCenter('https://player.twitch.tv/?video=' + data.videos[1]._id,'xtf','640','360');  
 		return false;
@@ -65,7 +65,7 @@ $.ajax({
 	   
 		var str2 = thumbRaw.split("-");
 		var noRes = str2[0] + "-" + str2[1];
-		var thumbHD = noRes + "-400x225.jpg"
+		var thumbHD = noRes + "-1280x720.jpg"
    document.getElementById('vod2link').onclick = function() { 
 		PopupCenter('https://player.twitch.tv/?video=' + data.videos[2]._id,'xtf','640','360');  
 		return false;

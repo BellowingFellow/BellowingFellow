@@ -6,16 +6,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/main.css?dev1" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		
 		
-		<script src="https://code.jquery.com/jquery-3.1.0.min.js" type="text/javascript"></script>
+		<script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
 		<!-- twitch api functions -->
-		<script src="js/streamFunctions.js" type="text/javascript"></script>
-		<script src="js/status.js" type="text/javascript"></script>
-		<script src="js/vods.js" type="text/javascript"></script>
+		<script src="js/streamFunctions.js?dev1" type="text/javascript"></script>
+		<script src="js/status.js?dev1" type="text/javascript"></script>
+		<script src="js/vods.js?dev1" type="text/javascript"></script>
 	</head>
 	<body class="index">
 		<div id="page-wrapper">
@@ -37,24 +37,22 @@
 				</header>
 
 			<!-- Banner -->
-				<section id="banner">
-
-					<!--
-						".inner" is set up as an inline-block so it automatically expands
-						in both directions to fit whatever's inside it. This means it won't
-						automatically wrap lines, so be sure to use line breaks where
-						appropriate (<br />).
-					-->
-					<div class="inner">
+				<section id="banner" class="banner" style="z-index: 100;">
+				<!-- desktop inner -->
+					<div class="innerBlock hidden-tablet hidden-phone">
 						<header>
 							<h4>BellowingFellow</h4>
 							<p class="visible-phone">Use the menu to navigate</p>
 						</header>
-						<div class="tacenter visible-phone"><img src="img/logo1.png" class="nodrag" alt="" /></div>
-						<div class="videobox hidden-tablet hidden-phone">	
+						<p id="liveStatus" style="margin-top: -35px; text-transform: uppercase;"></p>
+						
+						
+						
+						<div class="videobox">	
 						<img id="vod-thumbnail" class="nodrag" style="position:absolute;z-index:3; height: 450px; width: 800px;" src="#" alt="thumbnail" />		
 						<a id="button-play-link" href="#" onclick="pressPlay(); return false;"><span class="button-play"></span></a>
-						<iframe style="z-index:2; resize: none; border: none;" id="player" class="twitch-player" height="450" width="800" allowfullscreen></iframe>
+						<iframe style="position: absolute; z-index:2; resize: none; border: none;" id="player" class="twitch-player" height="450" width="800" allowfullscreen></iframe>
+						<img class="nodrag" style="z-index:1; height: 450px; width: 800px;" src="#" alt="" />
 						</div>
 						
 						<footer class="hidden-tablet hidden-phone">
@@ -62,17 +60,27 @@
 							<p id="title"></p>
 						</div>
 						</footer>
-
 					</div>
 					
-					<div class="inner hidden-phone" style="margin-top: 5%; width: 65%">
+				<!-- tablet/mobile inner -->
+					<div class="inner visible-phone visible-tablet">
+						<header>
+							<h4>BellowingFellow</h4>
+							<p class="visible-phone">Use the menu to navigate</p>
+						</header>
+						<div>
+						<img src="img/logo1.png" style="width: 200px; height: 200px;" alt="" />
+						</div>
+					</div>
+
+					<div class="innerBlock hidden-phone" style="margin-top: 10%; width: 65%;">
 						<div class="wrapper">
 							<header>
 								<h5>Discord Server</h5>
 							</header>
 							<br />
 							<div style="display: block; float: center; height: 430px; width: 100%; text-align: center;">
-								<iframe src="https://discordapp.com/widget?id=192200009469526017/192200009469526017&amp;theme=dark" style="display: block; float: center; border: none; height: 550px; width: 95%; margin-left: auto; margin-right: auto"></iframe>
+								<iframe src="https://discordapp.com/widget?id=192200009469526017/192200009469526017&amp;theme=dark" style="z-index: 10; display: block; float: center; border: none; height: 550px; width: 95%; max-width: 585px; margin-left: auto; margin-right: auto"></iframe>
 							</div>
 						</div>
 						
@@ -87,7 +95,6 @@
 							</div>
 						</div>
 					</div>
-
 				</section>
 
 			<!-- Main -->
@@ -97,14 +104,6 @@
 						<h2>More content from <strong>BellowingFellow</strong></h2>
 						<h5>Click thumbnails to view</h5>
 					</header>
-
-					<!-- One 
-						<section class="wrapper style2 container">
-							<div class="row">
-								<div style="position: relative; width: 100%; height: 300px; float: center; background-color: red;"></div>
-							</div>
-						</section>
-						-->
 						<div class="vods">
 							<a id="vod1link" href="" style="border-bottom: none;" target="_blank">
 							<img id="vod1img" class="nodrag vodimg" />

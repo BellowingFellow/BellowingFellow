@@ -4,50 +4,39 @@
 	All rights reserved
 */
 var username = "bellowingfellow";
+var userID = "124816807"
 
 var pressPlay;
 
 var uptime;
 
-function displayTitle()
-{
-	document.getElementById('liveStatus').textContent = "is currently live";
-	document.getElementById('liveStatus-m').textContent = "is currently live";
+function displayTitle() {
 	function getInfo(){
+				
+		$.ajax({
+		 type: 'GET',
+		 url: 'https://api.twitch.tv/kraken/streams/' + username,
+		 headers: {
+		   'Client-ID': '6rwxu0jdtxuhhgzqszxilv1jw6uhlv'
+		 },
+		 success: function(data) {
+		   console.log(data);
+		   
+			var title = data.stream.channel.status;
+			document.getElementById('title').innerHTML = title;
+			document.getElementById('liveStatus').textContent = "live for " + data.stream.viewers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " viewers playing " + data.stream.game;
+			//document.getElementById('liveStatus-m').textContent = "live";
 			
-$.ajax({
- type: 'GET',
- url: 'https://api.twitch.tv/kraken/streams/' + username,
- headers: {
-   'Client-ID': '6rwxu0jdtxuhhgzqszxilv1jw6uhlv'
- },
- success: function(data) {
-   console.log(data);
-   
-   var title = data.stream.channel.status;
-	   
-	var linkedTitle = title.replace("@YaBoiJT_", "<a href='https://twitter.com/yaboijt_'>@YaBoiJT_</a>");
-   
-   document.getElementById('title').innerHTML = linkedTitle;
-   
-   if (data.stream.game == "Creative")
-   {
-	   document.getElementById('streaminfo').textContent = "Being " + data.stream.game + " for " + data.stream.viewers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " viewers and " + data.stream.channel.followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " followers";
-   }
-   else{
-   
-   document.getElementById('streaminfo').textContent = "Playing " + data.stream.game + " for " + data.stream.viewers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " viewers and " + data.stream.channel.followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " followers";
-   }
- }
-});	
-	}
-	
-	getInfo();
-	setInterval(getInfo,10000);
-	}
+			
+		 } //end success
+		});	// end ajax
+		} //end getInfo
+		
+		getInfo();
+		setInterval(getInfo,10000);
+}
 
-function onlineFrame()
-{
+function onlineFrame() {
 	document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + username + "-800x450.jpg";
 	pressPlay = function() {
 		document.getElementById('button-play-link').style.visibility = "hidden";
@@ -58,8 +47,7 @@ function onlineFrame()
 		}
 }
 
-function streamOffline()
-{
+function streamOffline() {
 	$.ajax({
 	 type: 'GET',
 	 url: 'https://api.twitch.tv/kraken/channels/' + username + '/videos?broadcasts=true',
@@ -89,7 +77,7 @@ function streamOffline()
 		
 		document.getElementById('vod-thumbnail').src = thumbHD;
 		document.getElementById('title').textContent = data.videos[0].title;
-		//document.getElementById('liveStatus').textContent = "is currently offline";
+		document.getElementById('liveStatus').textContent = "offline";
 		//document.getElementById('liveStatus-m').textContent = "is currently offline";
 		var title = data.videos[0].title;
 		
@@ -99,12 +87,9 @@ function streamOffline()
 		setTimeout(function() {
 		document.getElementById('vod-thumbnail').style.visibility = "hidden";
 		}, 500);
-		}
-
 		
-		
-		
-		
-	 }
-	});
+		} //end pressPlay
+	
+	 } //end success
+	}); //end ajax
 }

@@ -19,7 +19,9 @@
 	}
 	
 	/* custom */
-	.videobox { position: relative; }
+	.videobox { 
+	position: relative; 
+	}
 		
 	.videobox span {
 		display: block;
@@ -36,13 +38,15 @@
 		background-image: url("img/dark-bl.svg"), url("img/dark-br.svg");
 		background-position: bottom left, bottom right;
 		background-repeat: no-repeat, no-repeat;
-		background-color: #d7c328; 
+		background-color: black;
+		color: white;
 		width: 75%;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
 		padding-top: 60px;
 		padding-bottom: 60px;
+		border-radius: 6px;
 	}
 	
 	.vodimg {
@@ -69,7 +73,7 @@
 	
 	.vodtitle {
 		font-size: 12px;
-		color: black;
+		color: white;
 		text-align: center;
 		font-weight: bold;
 	}
@@ -2300,6 +2304,7 @@
 			background: #d7c328;
 			color: inherit;
 			padding: 4em;
+			border-radius: 6px;
 		}
 		.wrapper.style4 a {
 			color: #4c4c4c;
@@ -2361,7 +2366,7 @@
 		position: fixed;
 		top: 0;
 		width: 100%;
-		z-index: 10000;
+		z-index: 0;
 	}
 
 
@@ -2488,6 +2493,13 @@
 		header.alt nav#nav ul li a:hover {
 			color: white;
 		}
+		#header.reveal {
+			z-index: 40;
+		}
+		#header.alt {
+			z-index: 0;
+		}
+		
 		header nav#nav ul li a:hover {
 			color: #d7c328;
 		}
@@ -2596,7 +2608,7 @@
 		}
 	}
 
-	#banner {
+	.banner {
 		background-attachment: scroll, scroll, scroll, fixed;
 		background-color: black;
 		background-image: url("img/light-bl.svg"), url("img/light-br.svg"), url("img/overlay.png"), url("../img/banner.jpg");
@@ -2607,6 +2619,12 @@
 		cursor: default;
 		padding: 6em 0;
 		text-align: center;
+	}
+	.banner2 {
+		background-image: url("img/light-tl.svg"), url("img/light-tr.svg"), url("img/overlay.png"), url("../img/banner.jpg"), url("img/light-bl.svg");
+		background-position: top left, top right, top left, top center, bottom left;
+		background-repeat: no-repeat, no-repeat, repeat, no-repeat, no-repeat;
+		background-size: 25em, 25em, auto, cover, 25em;
 	}
 
 		#banner .inner {
@@ -2626,8 +2644,29 @@
 			text-align: center;
 			border-radius: 6px;
 		}
+		.banner .innerBlock {
+			-moz-animation: reveal-banner 0.5s 0.75s ease-in-out;
+			-webkit-animation: reveal-banner 0.5s 0.75s ease-in-out;
+			-ms-animation: reveal-banner 0.5s 0.75s ease-in-out;
+			animation: reveal-banner 0.5s 0.75s ease-in-out;
+			-moz-animation-fill-mode: forwards;
+			-webkit-animation-fill-mode: forwards;
+			-ms-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			background: black;
+			color: #fff;
+			
+			width: 900px;
+			margin-left: auto;
+			margin-right: auto;
+			opacity: 0;
+			padding: 3em;
+			text-align: center;
+			border-radius: 6px;
+			z-index: 1;
+		}
 
-			#banner .inner header {
+			.banner .inner header, .banner .innerBlock header {
 				display: inline-block;
 				border-bottom: solid 2px;
 				border-top: solid 2px;
@@ -2635,7 +2674,7 @@
 				padding: 3px 0 3px 0;
 			}
 
-				#banner .inner header h2 {
+				.banner .inner header h2, .banner .innerBlock header h2 {
 					border-bottom: solid 2px;
 					border-top: solid 2px;
 					font-size: 2.5em;
@@ -2647,7 +2686,7 @@
 					text-transform: uppercase;
 				}
 				
-				#banner .inner header h4 {
+				.banner .inner header h4, .banner .innerBlock header h4 {
 					border-bottom: solid 2px;
 					border-top: solid 2px;
 					font-size: 1.5em;
@@ -2659,7 +2698,7 @@
 					text-transform: uppercase;
 				}
 				
-				#banner .inner header h5 {
+				.banner .inner header h5, .banner .inner header h5 {
 					border-bottom: solid 2px;
 					border-top: solid 2px;
 					font-size: 0.8em;
@@ -2671,19 +2710,19 @@
 					text-transform: uppercase;
 				}
 
-			#banner .inner p {
+			.banner .inner p {
 				letter-spacing: 0.1em;
 				margin: 0;
 				text-transform: uppercase;
 			}
 
-				#banner .inner p a {
+				.banner .inner p a {
 					color: inherit;
 					font-weight: 400;
 					text-decoration: none;
 				}
 
-			#banner .inner footer {
+			.banner .inner footer {
 				margin: 2em 0 0 0;
 			}
 
@@ -2831,7 +2870,7 @@
 
 		/* Banner */
 
-			#banner {
+			.banner {
 				background-attachment: scroll;
 			}
 
@@ -2906,7 +2945,7 @@
 
 		/* Banner */
 
-			#banner {
+			.banner {
 				background-size: 15em, 15em, auto, cover;
 			}
 
@@ -3008,7 +3047,7 @@
 
 		/* Banner */
 
-			#banner {
+			.banner {
 				margin: 0;
 			}
 
@@ -3349,26 +3388,26 @@
 
 		/* Banner */
 
-			#banner {
+			.banner {
 				background-size: 10em, 10em, auto, cover;
 				padding: 6em 0;
 			}
 
-				#banner .inner {
+				.banner .inner {
 					background: none;
 					display: block;
 					padding: 0 1.5em;
 				}
 
-					#banner .inner header h2 {
+					.banner .inner header h2 {
 						font-size: 1.5em;
 					}
 
-					#banner .inner p {
+					.banner .inner p {
 						text-align: center;
 					}
 
-					#banner .inner br {
+					.banner .inner br {
 						display: none;
 					}
 

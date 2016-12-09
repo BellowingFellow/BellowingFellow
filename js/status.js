@@ -20,7 +20,7 @@ $.ajax({
    {
 	$.ajax({
 	 type: 'GET',
-	 url: 'https://cors-anywhere.herokuapp.com/https://tmi.twitch.tv/hosts?include_logins=1&host=124816807',
+	 url: 'https://cors-anywhere.herokuapp.com/https://tmi.twitch.tv/hosts?include_logins=1&host=' + userID,
 	 success: function(data) {
 	   console.log(data);
 	   if (data.hosts[0].target_login == null)
