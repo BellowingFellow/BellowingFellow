@@ -2698,7 +2698,7 @@
 					text-transform: uppercase;
 				}
 				
-				.banner .inner header h5, .banner .inner header h5 {
+				.banner .inner header h5, .banner .innerBlock header h5 {
 					border-bottom: solid 2px;
 					border-top: solid 2px;
 					font-size: 0.8em;
