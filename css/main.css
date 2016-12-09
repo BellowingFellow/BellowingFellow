@@ -109,8 +109,14 @@
 	.visible-desktop {
 	  display: inherit !important;
 	}
+	.inner-1 {
+		display: none;
+	}
 
 	@media (min-width: 768px) and (max-width: 1200px) {
+	.inner-1 {
+		display: none
+	}
 	  .hidden-desktop {
 		display: inherit !important;
 	  }
@@ -126,6 +132,9 @@
 	}
 
 	@media (max-width: 767px) {
+	.inner-1 {
+		display: inline-block;
+	}
 	  .hidden-desktop {
 		display: inherit !important;
 	  }
@@ -2630,11 +2639,11 @@
 		background-size: 25em, 25em, auto, cover, 25em;
 	}
 
-		#banner .inner {
-			-moz-animation: reveal-banner 1s 0.75s ease-in-out;
-			-webkit-animation: reveal-banner 1s 0.75s ease-in-out;
-			-ms-animation: reveal-banner 1s 0.75s ease-in-out;
-			animation: reveal-banner 1s 0.75s ease-in-out;
+		.banner .inner {
+			-moz-animation: reveal-banner 1s 0.25s ease-in-out;
+			-webkit-animation: reveal-banner 1s 0.25s ease-in-out;
+			-ms-animation: reveal-banner 1s 0.25s ease-in-out;
+			animation: reveal-banner 1s 0.25s ease-in-out;
 			-moz-animation-fill-mode: forwards;
 			-webkit-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;
@@ -3404,6 +3413,9 @@
 
 					.banner .inner header h2 {
 						font-size: 1.5em;
+					}
+					.banner .inner header h4 {
+						font-size: 1em;
 					}
 
 					.banner .inner p {
