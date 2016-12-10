@@ -4,4 +4,8 @@ section style3: #b3b3b3
 
 yellow: #d7c328
 
+orange: #ff6f0e
+
+blue: #1e3e7b
+
 client id 6rwxu0jdtxuhhgzqszxilv1jw6uhlv
