@@ -74,9 +74,8 @@ $.ajax({
 		
 	   }
 	 },
-	 error: function(data)
-	 {
-		 fallbackAPI();
+	 error: function () {
+		 playerError();
 	 }
 	});
    }

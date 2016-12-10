@@ -28,7 +28,10 @@ function displayTitle() {
 			//document.getElementById('liveStatus-m').textContent = "live";
 			
 			
-		 } //end success
+		 }, //end success
+		 error: function () {
+			playerError();
+		}
 		});	// end ajax
 		} //end getInfo
 		
@@ -90,6 +93,14 @@ function streamOffline() {
 		
 		} //end pressPlay
 	
-	 } //end success
+	 },	 //end success
+	 error: function () {
+		 playerError();
+	 }
 	}); //end ajax
+}
+function playerError() {
+	document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/ttv-static/404_preview-800x450.jpg";
+	document.getElementById('title').textContent = "Error loading video";
+	document.getElementById('button-play-link').style.visibility = "hidden";
 }

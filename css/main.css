@@ -87,6 +87,37 @@
 	p#title {
 		font-size: 14px;
 	}
+	div.faqGroup {
+		display: block;
+	}
+	div.faqGroup:not(:first-of-type) {
+		margin-top: 3.5em;
+	}
+	.faqQ {
+		display: block;
+		float: left;
+		font-style: italic;
+	}
+	.faqA {
+		display: block;
+		float: right;
+	}
+	
+	.expand-box {
+		width: 100%;
+		padding: 0;
+		margin: 7px 0 0 0;
+		text-align: center;
+		margin-bottom: 20px;
+		padding-bottom: 30px;
+	}
+
+	.expand-box-header {
+		margin: 0;
+		color: #000000;
+		padding: 0 0 3px 2px;
+		overflow: auto;
+	}
 
 	/* responsive stuff */
 	.hidden {
@@ -1754,9 +1785,9 @@
 	}
 
 	hr {
-		border-top: solid 1px rgba(124, 128, 129, 0.2);
-		border: 0;
-		margin-bottom: 1.5em;
+		border: 1px solid #4c4c4c;
+		margin-top: 3.5em;
+		margin-bottom: 2.5em;
 	}
 
 	blockquote {
@@ -2770,7 +2801,7 @@
 
 	#cta {
 		background-attachment: scroll, scroll, scroll, fixed;
-		background-color: #645862;
+		background-color: #d7c328;
 		background-image: url("img/light-tl.svg"), url("img/light-tr.svg"), url("img/overlay.png"), url("../img/banner.jpg");
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;

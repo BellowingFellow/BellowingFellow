@@ -15,6 +15,12 @@ function PopupCenter(url, title, w, h) {
         newWindow.focus();
     }
 }
+/*
+	vods.js
+	Copyright (c) mattunderscore.co
+	All rights reserved
+*/
+window.onload = function() {
 
 $.ajax({
  type: 'GET',
@@ -75,6 +81,10 @@ $.ajax({
    
    document.getElementById('vod2title').textContent = data.videos[2].title;
    
+ },
+ error: function(data) {
+	document.getElementById('vodError').textContent = "Error loading past broadcasts";
  }
 });	
 
+} //end window.onload
