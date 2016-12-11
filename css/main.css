@@ -3414,6 +3414,17 @@
 	}
 
 /* Mobile */
+	@media screen and (max-width: 955px) {
+		#footer {
+			padding: 3em 1.5em;
+		}
+		#footer .copyright li {
+			display: block;
+			margin: 1em 0 0 0;
+			padding: 0;
+			border: 0;
+		}
+	}
 
 	@media screen and (max-width: 736px) {
 
@@ -3584,9 +3595,7 @@
 
 		/* Footer */
 
-			#footer {
-				padding: 3em 1.5em;
-			}
+			
 
 				#footer .copyright li {
 					display: block;
