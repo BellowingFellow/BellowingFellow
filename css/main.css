@@ -181,6 +181,10 @@
 		display: block;
 		float: right;
 	}
+	.staffInfo a {
+		border-bottom: dotted 1px;
+		text-decoration: none !important;
+	}
 	.staffHeader {
 		text-align: center;
 		margin-bottom: -50px;
@@ -1877,6 +1881,9 @@
 		border-left: solid 0.25em rgba(124, 128, 129, 0.8);
 		font-style: italic;
 		padding: 1em 0 1em 2em;
+	}
+	blockquote a {
+		text-decoration: none !important;
 	}
 
 /* Section/Article */
