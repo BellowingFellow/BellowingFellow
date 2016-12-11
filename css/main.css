@@ -2485,6 +2485,9 @@
 				#header nav ul li.submenu > a {
 					text-decoration: none;
 				}
+				.subitem {
+					color: black !important;
+				}
 
 					#header nav ul li.submenu > a:before {
 						-moz-osx-font-smoothing: grayscale;
