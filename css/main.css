@@ -19,15 +19,21 @@
 	}
 	
 	/* hide nav link when menu will overlap */
-	@media (max-width: 1140px) {
+	@media (max-width: 1520px) {
 		a#headerLink {
 			display: none !important;
 		}
 	}
 	/* hide logo when menu will overlap */
-	@media (max-width: 900px) {
+	@media (max-width: 1120px) {
 		img#logoLarger {
 			display: none !important;
+		}
+	}
+	/* shrink menu items so they don't go onto a second line */
+	@media (max-width: 1080px) {
+		header#header {
+			font-size: 0.625em !important;
 		}
 	}
 	
@@ -120,11 +126,50 @@
 	.dlLink {
 		display: block;
 		float: right;
-		text-decoration: underline;
+	}
+	.dlLink a {
+		border-bottom: dotted 1px;
+		text-decoration: none !important;
 	}
 	.dlHeader {
 		text-align: center;
 		margin-bottom: -50px;
+	}
+	.serverName {
+		display: block;
+		float: center;
+		font-size: 1.2em;
+	}
+	.serverLogo {
+		height: 35px;
+		width: 35px;
+		vertical-align: middle;
+		margin: 5px;
+	}
+	.serverIP {
+		display: block;
+		float: left;
+		font-size: 1em;
+	}
+	.serverIP a {
+		border-bottom: dotted 1px;
+		text-decoration: none !important;
+	}
+	.serverWebsite {
+		display: block;
+		float: right;
+		font-size: 1em;
+	}
+	.serverWebsite a {
+		border-bottom: dotted 1px;
+		text-decoration: none !important;
+	}
+	.sponsorLogo {
+		width: 100px;
+		height: 100px;
+	}
+	.sponsorLink {
+		text-decoration: none !important;
 	}
 	.staffName {
 		font-size: 1.2em;
@@ -2389,9 +2434,10 @@
 		}
 		.wrapper.style4 a {
 			color: white;
+			text-decoration: underline;
 		}
 		.wrapper.style4 a:hover {
-			color: #1e3e7b;
+			color: lightgray;
 		}
 
 /* Header */
