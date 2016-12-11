@@ -18,6 +18,19 @@
 		vertical-align: baseline;
 	}
 	
+	/* hide nav link when menu will overlap */
+	@media (max-width: 1140px) {
+		a#headerLink {
+			display: none !important;
+		}
+	}
+	/* hide logo when menu will overlap */
+	@media (max-width: 900px) {
+		img#logoLarger {
+			display: none !important;
+		}
+	}
+	
 	/* custom */
 	.videobox { 
 	position: relative; 

@@ -9,3 +9,7 @@ orange: #ff6f0e
 blue: #1e3e7b
 
 client id 6rwxu0jdtxuhhgzqszxilv1jw6uhlv
+
+nav text overlap:
+	-home: 1140px wide
+	-all other: 1010px wide
