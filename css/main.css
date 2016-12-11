@@ -3414,7 +3414,7 @@
 	}
 
 /* Mobile */
-	@media screen and (max-width: 955px) {
+	@media screen and (max-width: 980px) {
 		#footer {
 			padding: 3em 1.5em;
 		}
