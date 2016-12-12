@@ -73,6 +73,7 @@
 		padding-top: 30px;
 	}
 	
+	
 	.nodrag {
 	user-drag: none;
 	-moz-user-select: none;
@@ -80,7 +81,12 @@
 	}
 	
 	.tacenter {
-		text-align: center;
+		text-align: center !important;
+	}
+	section.business ul li {
+		font-size: 1.3em;
+		margin-bottom: 10px;
+		list-style-type: circle;
 	}
 	
 	.fa { 
@@ -2439,9 +2445,11 @@
 			padding: 4em;
 			border-radius: 6px;
 		}
+		.wrapper.style4 h1#notfound {
+			font-size: 5em;
+		}
 		.wrapper.style4 a {
 			color: white;
-			text-decoration: underline;
 		}
 		.wrapper.style4 a:hover {
 			color: lightgray;
@@ -2951,7 +2959,6 @@
 					padding: 0;
 					border: 0;
 				}
-
 /* Wide */
 
 	@media screen and (max-width: 1680px) {
@@ -2967,6 +2974,10 @@
 			header.special {
 				padding-top: 5.5em;
 				margin-bottom: 4em;
+			}
+			
+			.wrapper.style4 h1#notfound {
+				font-size: 5em;
 			}
 
 	}
@@ -3006,6 +3017,9 @@
 
 				.wrapper.style4 {
 					padding: 3em;
+				}
+				.wrapper.style4 h1#notfound {
+					font-size: 4em;
 				}
 
 		/* Header */
@@ -3087,6 +3101,9 @@
 
 				.wrapper.style4 {
 					padding: 2.5em;
+				}
+				.wrapper.style4 h1#notfound {
+					font-size: 2.5em;
 				}
 
 		/* Banner */
@@ -3205,6 +3222,9 @@
 
 			.wrapper.style4 {
 				padding-bottom: 3em;
+			}
+			.wrapper.style4 h1#notfound {
+				font-size: 2.5em;
 			}
 
 		/* Main */
