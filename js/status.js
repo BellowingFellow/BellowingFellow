@@ -1,6 +1,6 @@
 /*
 	status.js
-	Copyright (c) mattunderscore.co
+	Copyright (c) mattunderscore.us
 	All rights reserved
 */
 $.ajax({

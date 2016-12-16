@@ -17,7 +17,7 @@ function PopupCenter(url, title, w, h) {
 }
 /*
 	vods.js
-	Copyright (c) mattunderscore.co
+	Copyright (c) mattunderscore.us
 	All rights reserved
 */
 window.onload = function() {
