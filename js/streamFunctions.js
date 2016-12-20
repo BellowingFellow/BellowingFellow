@@ -1,8 +1,8 @@
-/*
-	streamFunctions.js
-	Copyright (c) mattunderscore.us
-	All rights reserved
-*/
+/* streamFunctions.js
+ * Copyright (C) mattunderscore.us - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ */
 var username = "bellowingfellow";
 var userID = "124816807"
 

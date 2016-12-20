@@ -1,8 +1,8 @@
-/*
-	status.js
-	Copyright (c) mattunderscore.us
-	All rights reserved
-*/
+/* status.js
+ * Copyright (C) mattunderscore.us - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ */
 $.ajax({
  type: 'GET',
  url: 'https://api.twitch.tv/kraken/streams/' + username,
