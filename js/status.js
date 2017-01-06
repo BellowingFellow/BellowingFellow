@@ -3,6 +3,7 @@
  * Unauthorized copying of this file, via any medium is strictly prohibited
  * Proprietary and confidential
  */
+ytDisplay();
 $.ajax({
  type: 'GET',
  url: 'https://api.twitch.tv/kraken/streams/' + username,
@@ -30,10 +31,8 @@ $.ajax({
 	   else
 	   {
 		document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + data.hosts[0].target_login + "-800x450.jpg";
-		document.getElementById('liveStatus').textContent = "is currently hosting " + data.hosts[0].target_display_name;
-		document.getElementById('liveStatus-m').textContent = "is currently hosting " + data.hosts[0].target_display_name;
-		document.getElementById('popout-chat').onclick = function () { window.open('https://www.twitch.tv/'+ data.hosts[0].target_login +'/chat', 'popoutChat', 'width=400,height=650'); return false; }
-		
+		document.getElementById('liveStatus').textContent = "hosting " + data.hosts[0].target_display_name;
+		document.getElementById('liveStatus-m').textContent = "hosting " + data.hosts[0].target_display_name;
 		pressPlay = function() {
 		document.getElementById('button-play-link').style.visibility = "hidden";
 		document.getElementById('player').src = "https://player.twitch.tv/?channel=" + data.hosts[0].target_login +"&muted";
@@ -63,7 +62,9 @@ $.ajax({
 		   }
 		   
 		   } //endif stream
-		   else {streamOffline();}
+		   else {
+				streamOffline();
+			}
 		 }
 		});
 

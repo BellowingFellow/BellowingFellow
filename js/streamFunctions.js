@@ -25,7 +25,7 @@ function displayTitle() {
 			var title = data.stream.channel.status;
 			document.getElementById('title').innerHTML = title;
 			document.getElementById('liveStatus').textContent = "live for " + data.stream.viewers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " viewers playing " + data.stream.game;
-			//document.getElementById('liveStatus-m').textContent = "live";
+			document.getElementById('liveStatus-m').textContent = "live";
 			
 			
 		 }, //end success
@@ -48,6 +48,26 @@ function onlineFrame() {
 		document.getElementById('vod-thumbnail').style.visibility = "hidden";
 		}, 500);	
 		}
+}
+
+function ytDisplay() {
+	
+	
+	$.ajax({
+		 type: 'GET',
+		 url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUR8kI87wsdHT4cVZyqsUVOg&maxResults=1&key=AIzaSyDRGoNzXk7wVpE2lCXG9SS7wPMZhmFSEhI',
+		 success: function(data) {
+			console.log(data);
+			document.getElementById('yt-title').textContent = "Recent Video: " + data.items[0].snippet.title;
+			document.getElementById('yt-player').src = "https://www.youtube.com/embed/" + data.items[0].snippet.resourceId.videoId;
+			
+			
+		 }, //end success
+		 error: function () {
+		}
+		});	// end ajax
+	
+	
 }
 
 function streamOffline() {
@@ -81,7 +101,7 @@ function streamOffline() {
 		document.getElementById('vod-thumbnail').src = thumbHD;
 		document.getElementById('title').textContent = data.videos[0].title;
 		document.getElementById('liveStatus').textContent = "offline";
-		//document.getElementById('liveStatus-m').textContent = "is currently offline";
+		document.getElementById('liveStatus-m').textContent = "offline";
 		var title = data.videos[0].title;
 		
 		pressPlay = function() {
@@ -99,6 +119,7 @@ function streamOffline() {
 	 }
 	}); //end ajax
 }
+
 function playerError() {
 	document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/ttv-static/404_preview-800x450.jpg";
 	document.getElementById('title').textContent = "Error loading video";
