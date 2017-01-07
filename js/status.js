@@ -33,12 +33,15 @@ $.ajax({
 		document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + data.hosts[0].target_login + "-800x450.jpg";
 		document.getElementById('liveStatus').textContent = "hosting " + data.hosts[0].target_display_name;
 		document.getElementById('liveStatus-m').textContent = "hosting " + data.hosts[0].target_display_name;
+		
 		pressPlay = function() {
-		document.getElementById('button-play-link').style.visibility = "hidden";
+		document.getElementById('button-play-span').style.background = "url(img/loading-ring.svg) no-repeat center center";
 		document.getElementById('player').src = "https://player.twitch.tv/?channel=" + data.hosts[0].target_login +"&muted";
 		setTimeout(function() {
 		document.getElementById('vod-thumbnail').style.visibility = "hidden";
-		}, 500);
+		document.getElementById('button-play-link').style.visibility = "hidden";
+		}, 2500);
+		
 		}
 		function getHostInfo() {
 		$.ajax({

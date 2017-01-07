@@ -42,11 +42,12 @@ function displayTitle() {
 function onlineFrame() {
 	document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + username + "-800x450.jpg";
 	pressPlay = function() {
-		document.getElementById('button-play-link').style.visibility = "hidden";
+		document.getElementById('button-play-span').style.background = "url(img/loading-ring.svg) no-repeat center center";
 		document.getElementById('player').src = "https://player.twitch.tv/?channel=" + username +"&muted";
 		setTimeout(function() {
 		document.getElementById('vod-thumbnail').style.visibility = "hidden";
-		}, 500);	
+		document.getElementById('button-play-link').style.visibility = "hidden";
+		}, 2500);	
 		}
 }
 
@@ -105,11 +106,12 @@ function streamOffline() {
 		var title = data.videos[0].title;
 		
 		pressPlay = function() {
-		document.getElementById('button-play-link').style.visibility = "hidden";
+		document.getElementById('button-play-span').style.background = "url(img/loading-ring.svg) no-repeat center center";
 		document.getElementById('player').src = "https://player.twitch.tv/?video=" + data.videos[0]._id;
 		setTimeout(function() {
 		document.getElementById('vod-thumbnail').style.visibility = "hidden";
-		}, 500);
+		document.getElementById('button-play-link').style.visibility = "hidden";
+		}, 2500);
 		
 		} //end pressPlay
 	
