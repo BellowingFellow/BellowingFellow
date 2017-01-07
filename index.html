@@ -13,9 +13,8 @@
 		
 		<script src="js/jquery-3.1.0.min.js" type="text/javascript"></script>
 		<!-- twitch api functions -->
-		<script src="js/streamFunctions.js?revision=1-5-2017" type="text/javascript"></script>
+		<script src="js/streamFunctions.js?revision=1-6-2017" type="text/javascript"></script>
 		<script src="js/status.js?revision=1-5-2017" type="text/javascript"></script>
-		<script src="js/vods.js?revision=12-15-2016" type="text/javascript"></script>
 	</head>
 	<body class="index">
 		<div id="page-wrapper">
@@ -62,7 +61,7 @@
 						<p id="liveStatus" style="margin-top: -35px; text-transform: uppercase;"></p>
 						
 						
-						
+						<p id="title" style="margin-top: 35px; margin-bottom: 5px; text-transform: uppercase; font-size: 16px;"></p>
 						<div class="videobox">	
 						<img id="vod-thumbnail" class="nodrag" style="position:absolute;z-index:3; height: 450px; width: 800px;" src="#" alt="thumbnail" />		
 						<a id="button-play-link" href="#" onclick="pressPlay(); return false;"><span class="button-play"></span></a>
@@ -70,18 +69,23 @@
 						<img class="nodrag" style="z-index:1; height: 450px; width: 800px; visibility: hidden;" src="#" alt="" />
 						</div>
 						
-						<footer class="hidden-tablet hidden-phone">
-						<div style="width: 800px;">
-							<p id="title"></p>
-						</div>
-						</footer>
-						
 						<hr style="background-color: white;" />
 						
-						<p id="yt-title" style="margin-top: 35px; margin-bottom: 5px; text-transform: uppercase;"></p>
+						<p id="yt-title" style="margin-top: 35px; margin-bottom: 5px; text-transform: uppercase; font-size: 16px;"></p>
 						<div class="videobox">	
 						<iframe style="position: absolute; z-index:2; resize: none; border: none;" id="yt-player" class="twitch-player" height="450" width="800" allowfullscreen></iframe>
 						<img class="nodrag" style="z-index:1; height: 450px; width: 800px; visibility: hidden;" src="#" alt="" />
+						</div>
+						
+						<hr style="background-color: white;" />
+						
+						<header>
+							<h5>Twitter Feed</h5>
+						</header>
+						<br />
+						<div style="display: block; float: center; height: 550px; width: 100%;">
+							<a class="twitter-timeline" data-width="585" data-height="550" data-theme="dark" data-link-color="#ff6f0e" href="https://twitter.com/BellowingFellow"></a>
+							<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 						</div>
 					</div>
 					
@@ -100,7 +104,9 @@
 
 					</div>
 					
+					<!--
 					<div class="innerBlock hidden-phone" style="margin-top: 10%; width: 65%;">
+					
 						<div class="wrapper">
 							<header>
 								<h5>Discord Server</h5>
@@ -110,6 +116,7 @@
 								<iframe src="https://discordapp.com/widget?id=192200009469526017&theme=dark" style="z-index: 10; display: block; float: center; border: none; height: 550px; width: 95%; max-width: 585px; margin-left: auto; margin-right: auto"></iframe>
 							</div>
 						</div>
+					
 						
 						<div class="wrapper">
 							<header>
@@ -122,29 +129,8 @@
 							</div>
 						</div>
 					</div>
+					-->
 				</section>
-
-			<!-- Main -->
-				<article id="main" class="hidden-phone">
-
-					<header class="special container">
-						<h2>More content from <strong>BellowingFellow</strong></h2>
-						<h5>Click thumbnails to view</h5>
-					</header>
-						<div class="vods">
-						<h5 id="vodError"></h5>
-							<a id="vod1link" href="" style="border-bottom: none;" target="_blank">
-							<img id="vod1img" class="nodrag vodimg" />
-							<p id="vod1title" class="vodtitle"></p>
-							</a>
-							
-							<a id="vod2link" href="" style="border-bottom: none;" target="_blank">
-							<img id="vod2img" class="nodrag vodimg" />
-							<p id="vod2title" class="vodtitle"></p>
-							</a>
-						</div>
-
-				</article>
 
 			<!-- Footer -->
 				<footer id="footer">

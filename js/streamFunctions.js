@@ -58,7 +58,7 @@ function ytDisplay() {
 		 url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUR8kI87wsdHT4cVZyqsUVOg&maxResults=1&key=AIzaSyDRGoNzXk7wVpE2lCXG9SS7wPMZhmFSEhI',
 		 success: function(data) {
 			console.log(data);
-			document.getElementById('yt-title').textContent = "Recent Video: " + data.items[0].snippet.title;
+			document.getElementById('yt-title').innerHTML = "<strong>Recent Video: </strong>" + data.items[0].snippet.title;
 			document.getElementById('yt-player').src = "https://www.youtube.com/embed/" + data.items[0].snippet.resourceId.videoId;
 			
 			
@@ -99,7 +99,7 @@ function streamOffline() {
 		var thumbHD = noRes + "-800x450.jpg"
 		
 		document.getElementById('vod-thumbnail').src = thumbHD;
-		document.getElementById('title').textContent = data.videos[0].title;
+		document.getElementById('title').innerHTML = "<strong>Recent Broadcast: </strong>" + data.videos[0].title;
 		document.getElementById('liveStatus').textContent = "offline";
 		document.getElementById('liveStatus-m').textContent = "offline";
 		var title = data.videos[0].title;
