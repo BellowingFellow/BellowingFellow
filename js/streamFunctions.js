@@ -89,17 +89,32 @@ function streamOffline() {
 		}
 	   	 
 		var thumbRaw;
-		if (data.videos[0].thumbnails[2] == null)
+		if (data.videos[0].thumbnails == null)
 		{
-		thumbRaw = data.videos[0].thumbnails[0].url;
+			try {
+				thumbRaw = data.videos[0].thumbnails[0].url;
+				formatThumbnail();
+			}
+			catch(err) {
+				 document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/ttv-static/404_preview-1170x659.jpg";
+			}
 		}
-		else {thumbRaw = data.videos[0].thumbnails[2].url;}
-	   
+		else {
+			try {
+			thumbRaw = data.videos[0].thumbnails[2].url;
+			formatThumbnail();
+			}
+			catch(err) {
+				 document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/ttv-static/404_preview-1170x659.jpg";
+			}
+		}
+		
+	   function formatThumbnail() {
 		var str2 = thumbRaw.split("-");
 		var noRes = str2[0] + "-" + str2[1];
-		var thumbHD = noRes + "-800x450.jpg"
-		
-		document.getElementById('vod-thumbnail').src = thumbHD;
+		var thumbHD = noRes + "-1170x659.jpg"
+	   document.getElementById('vod-thumbnail').src = thumbHD;
+	   }
 		document.getElementById('title').innerHTML = "<strong>Recent Broadcast: </strong>" + data.videos[0].title;
 		document.getElementById('liveStatus').textContent = "offline";
 		document.getElementById('liveStatus-m').textContent = "offline";
