@@ -4,7 +4,9 @@ section style3: #b3b3b3
 
 yellow: #d7c328
 
-orange: #ff6f0e
+orange: #e87325
+
+red: #ae1f23
 
 blue: #1e3e7b
 

@@ -1881,6 +1881,8 @@
 		border: solid 0.05em rgba(124, 128, 129, 0.8);
 		margin-top: 3.5em;
 		margin-bottom: 2.5em;
+		background: white;
+		color: white;
 	}
 
 	blockquote {
@@ -2411,7 +2413,7 @@
 		}
 
 		.wrapper.style2 {
-			background-color: #e87325;
+			background-color: #ae1f23;
 			background-image: url("img/dark-bl.svg"), url("img/dark-br.svg");
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
@@ -2440,7 +2442,7 @@
 		}
 
 		.wrapper.style4 {
-			background: #e87325;
+			background: #ae1f23;
 			color: white !important;
 			padding: 4em;
 			border-radius: 6px;
@@ -2658,7 +2660,7 @@
 			}
 
 				#header.alt nav ul li.active > a, #header.alt nav ul li:hover > a {
-					color: #e87325
+					color: #ae1f23
 					border: solid 1px;
 				}
 
@@ -2758,7 +2760,7 @@
 
 	.banner {
 		background-attachment: scroll, scroll, scroll, fixed;
-		background-color: #e87325;
+		background-color: #ae1f23;
 		background-image: url("img/light-bl.svg"), url("img/light-br.svg");
 		background-position: bottom left, bottom right;
 		background-repeat: no-repeat, no-repeat;
@@ -2915,7 +2917,7 @@
 
 	#cta {
 		background-attachment: scroll, scroll, scroll, fixed;
-		background-color: #e87325;
+		background-color: #ae1f23;
 		background-image: url("img/light-tl.svg"), url("img/light-tr.svg"), url("img/overlay.png"), url("../img/banner.jpg");
 		background-position: top left, top right, top left, bottom center;
 		background-repeat: no-repeat, no-repeat, repeat, no-repeat;
