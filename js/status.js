@@ -83,5 +83,8 @@ $.ajax({
 	 }
 	});
    }
- }
+ },
+error: function () {
+	playerError();
+}
 });
