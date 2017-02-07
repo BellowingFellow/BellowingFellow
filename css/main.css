@@ -1810,7 +1810,8 @@
 			transition: none !important;
 		}
 
-	body, input, select, textarea {
+	body, input, select, textarea{
+		display: block;
 		color: white;
 		font-family: 'Lato', sans-serif;
 		font-size: 15pt;
@@ -1818,7 +1819,16 @@
 		letter-spacing: 0.025em;
 		line-height: 1.75em;
 	}
-
+	label, input {
+		display: inline;
+	}
+	select {
+		line-height: 1.1em !important;
+	}
+	option {
+		color: black;
+	}
+	
 	a {
 		-moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -1967,6 +1977,7 @@
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	select,
 	textarea {
 		-moz-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
