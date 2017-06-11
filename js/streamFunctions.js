@@ -1,5 +1,5 @@
 /* streamFunctions.js
- * Copyright (C) mattunderscore.us - All Rights Reserved
+ * Copyright (C) Matt Jones - All Rights Reserved
  * Unauthorized copying of this file, via any medium is strictly prohibited
  * Proprietary and confidential
  */
@@ -59,8 +59,15 @@ function ytDisplay() {
 		 url: 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUR8kI87wsdHT4cVZyqsUVOg&maxResults=1&key=AIzaSyDRGoNzXk7wVpE2lCXG9SS7wPMZhmFSEhI',
 		 success: function(data) {
 			console.log(data);
-			document.getElementById('yt-title').innerHTML = "<strong>Recent Video: </strong>" + data.items[0].snippet.title;
-			document.getElementById('yt-player').src = "https://www.youtube.com/embed/" + data.items[0].snippet.resourceId.videoId;
+			if (data.items[0] != undefined && data.items[0] != null) {
+				document.getElementById('yt-title').innerHTML = "<strong>Recent Video: </strong>" + data.items[0].snippet.title;
+				document.getElementById('yt-player').src = "https://www.youtube.com/embed/" + data.items[0].snippet.resourceId.videoId;
+			}
+			else {
+				for (var i = 0; i < document.querySelectorAll(".yt-group").length; i++) {
+					document.getElementsByClassName("yt-group")[i].style.display = "none";
+				}
+			}
 			
 			
 		 }, //end success
