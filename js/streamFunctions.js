@@ -90,13 +90,14 @@ function streamOffline() {
 	   
 	   	if (data._total == 0)
 		{
-			document.getElementById('title').textContent = "Error 404 - no stream data found";
-			document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/ttv-static/404_preview-800x450.jpg";
+			document.getElementById('title').textContent = "No Recent Broadcasts";
+			document.getElementById('vod-thumbnail').style.display = "none";
 			document.getElementById('button-play-link').style.visibility = "hidden";
 		}
+		else {
 	   	 
 		var thumbRaw;
-		if (data.videos[0].thumbnails == null)
+		if (data.videos[0] == null || !data.videos || data.videos[0] == undefined)
 		{
 			try {
 				thumbRaw = data.videos[0].thumbnails[0].url;
@@ -122,10 +123,16 @@ function streamOffline() {
 		var thumbHD = noRes + "-1170x659.jpg"
 	   document.getElementById('vod-thumbnail').src = thumbHD;
 	   }
-		document.getElementById('title').innerHTML = "<strong>Recent Broadcast: </strong>" + data.videos[0].title;
+
 		document.getElementById('liveStatus').textContent = "offline";
 		document.getElementById('liveStatus-m').textContent = "offline";
-		var title = data.videos[0].title;
+	   try {
+			document.getElementById('title').innerHTML = "<strong>Recent Broadcast: </strong>" + data.videos[0].title;
+			var title = data.videos[0].title;
+	   }
+	   catch(err) {
+			document.getElementById('title').innerHTML = "<strong>No Recent Broadcasts</strong>";
+	   }
 		
 		pressPlay = function() {
 		document.getElementById('button-play-span').style.background = "url(img/loading-ring.svg) no-repeat center center";
@@ -136,6 +143,8 @@ function streamOffline() {
 		}, 2500);
 		
 		} //end pressPlay
+
+		} //end else
 	
 	 },	 //end success
 	 error: function () {
