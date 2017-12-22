@@ -8,16 +8,15 @@ $.ajax({
  type: 'GET',
  url: 'https://api.twitch.tv/kraken/streams/' + username,
  headers: {
-   'Client-ID': '6rwxu0jdtxuhhgzqszxilv1jw6uhlv'
+   'Client-ID': clientId
  },
  success: function(data) {
    console.log(data);
    if (data.stream)
    {
-   displayTitle();
-   onlineFrame();
+   online();
    }
-   else 
+   else
    {
 	$.ajax({
 	 type: 'GET',
@@ -30,40 +29,31 @@ $.ajax({
 	   }
 	   else
 	   {
-		document.getElementById('vod-thumbnail').src = "https://static-cdn.jtvnw.net/previews-ttv/live_user_" + data.hosts[0].target_login + "-800x450.jpg";
 		document.getElementById('liveStatus').textContent = "hosting " + data.hosts[0].target_display_name;
 		document.getElementById('liveStatus-m').textContent = "hosting " + data.hosts[0].target_display_name;
-		
-		pressPlay = function() {
-		document.getElementById('button-play-span').style.background = "url(img/loading-ring.svg) no-repeat center center";
-		document.getElementById('player').src = "https://player.twitch.tv/?channel=" + data.hosts[0].target_login +"&muted";
-		setTimeout(function() {
-		document.getElementById('vod-thumbnail').style.visibility = "hidden";
-		document.getElementById('button-play-link').style.visibility = "hidden";
-		}, 2500);
-		
-		}
+
 		function getHostInfo() {
 		$.ajax({
 		 type: 'GET',
 		 url: 'https://api.twitch.tv/kraken/streams/' + data.hosts[0].target_login,
 		 headers: {
-		   'Client-ID': '6rwxu0jdtxuhhgzqszxilv1jw6uhlv'
+		   'Client-ID': clientId
 		 },
 		 success: function(data) {
 		   console.log(data);
-		   
+
 		   if (data.stream) {
 		   document.getElementById('title').innerHTML = data.stream.channel.status;
+       document.getElementById("player").src = "https://player.twitch.tv?channel=" + data.stream.channel.name + "&autoplay=false";
 		   if (data.stream.game == "Creative")
 		   {
 			   document.getElementById('streaminfo').textContent = "Being " + data.stream.game + " for " + data.stream.viewers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " viewers and " + data.stream.channel.followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " followers";
 		   }
 		   else{
-		   
+
 		   document.getElementById('streaminfo').textContent = "Playing " + data.stream.game + " for " + data.stream.viewers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " viewers and " + data.stream.channel.followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " followers";
 		   }
-		   
+
 		   } //endif stream
 		   else {
 				streamOffline();
@@ -75,7 +65,7 @@ $.ajax({
 		}
 		getHostInfo();
 		setInterval(getHostInfo,10000);
-		
+
 	   }
 	 },
 	 error: function () {

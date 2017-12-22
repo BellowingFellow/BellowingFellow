@@ -17,7 +17,7 @@
 		font: inherit;
 		vertical-align: baseline;
 	}
-	
+
 	/* hide nav link when menu will overlap */
 	@media (max-width: 1520px) {
 		a#headerLink {
@@ -36,12 +36,12 @@
 			font-size: 0.625em !important;
 		}
 	}
-	
+
 	/* custom */
-	.videobox { 
-	position: relative; 
+	.videobox {
+	position: relative;
 	}
-		
+
 	.videobox span {
 		display: block;
 		position: absolute;
@@ -52,7 +52,7 @@
 		z-index: 4;
 		background: url(../img/button-play.png) no-repeat center center;
 	}
-	
+
 	.vods {
 		background-image: url("img/dark-bl.svg"), url("img/dark-br.svg");
 		background-position: bottom left, bottom right;
@@ -67,19 +67,19 @@
 		padding-bottom: 60px;
 		border-radius: 6px;
 	}
-	
+
 	.vodimg {
 		width: 70%;
 		padding-top: 30px;
 	}
-	
-	
+
+
 	.nodrag {
 	user-drag: none;
 	-moz-user-select: none;
 	-webkit-user-drag: none;
 	}
-	
+
 	.tacenter {
 		text-align: center !important;
 	}
@@ -88,14 +88,14 @@
 		margin-bottom: 10px;
 		list-style-type: circle;
 	}
-	
-	.fa { 
+
+	.fa {
 		color: white;
 		color: rgba(255, 255, 255, 0.5);
 		font-size: 28px;
 		border-bottom: none;
 	}
-	
+
 	.vodtitle {
 		font-size: 12px;
 		color: white;
@@ -105,7 +105,7 @@
 	footer a:hover {
 	color: #ae1f23 !important;
 	}
-	
+
 	p#title {
 		font-size: 14px;
 	}
@@ -124,7 +124,7 @@
 		display: block;
 		float: right;
 	}
-	
+
 	.dlName {
 		display: block;
 		float: left;
@@ -196,7 +196,7 @@
 		margin-bottom: -50px;
 		font-size: 1.3em;
 	}
-	
+
 	.expand-box {
 		width: 100%;
 		padding: 0;
@@ -1828,7 +1828,7 @@
 	option {
 		color: black;
 	}
-	
+
 	a {
 		-moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
@@ -2310,7 +2310,7 @@
 		table tfoot {
 			border-top: solid 1px rgba(255, 255, 255, 0.25);
 		}
-		
+
 		table caption {
 			caption-side: bottom;
 		}
@@ -2620,7 +2620,7 @@
 			padding: 2em 2.5em;
 			position: absolute;
 		}
-		
+
 		header img#logoLarger {
 			display: none;
 		}
@@ -2660,7 +2660,7 @@
 		#header.alt {
 			z-index: 0;
 		}
-		
+
 		header nav#nav ul li a:hover {
 			color: white;
 		}
@@ -2822,12 +2822,12 @@
 			animation-fill-mode: forwards;
 			background: black;
 			color: #fff;
-			
+
 			width: 900px;
 			margin-left: auto;
 			margin-right: auto;
 			opacity: 0;
-			padding: 3em;
+			padding: 2em;
 			text-align: center;
 			border-radius: 6px;
 			z-index: 1;
@@ -2852,7 +2852,7 @@
 					position: relative;
 					text-transform: uppercase;
 				}
-				
+
 				.banner .inner header h4, .banner .innerBlock header h4 {
 					border-bottom: solid 2px;
 					border-top: solid 2px;
@@ -2864,7 +2864,7 @@
 					position: relative;
 					text-transform: uppercase;
 				}
-				
+
 				.banner .inner header h5, .banner .innerBlock header h5 {
 					border-bottom: solid 2px;
 					border-top: solid 2px;
@@ -2988,7 +2988,7 @@
 				padding-top: 5.5em;
 				margin-bottom: 4em;
 			}
-			
+
 			.wrapper.style4 h1#notfound {
 				font-size: 5em;
 			}
@@ -3628,7 +3628,7 @@
 
 		/* Footer */
 
-			
+
 
 				#footer .copyright li {
 					display: block;
