@@ -38,7 +38,6 @@ function online() {
 		} //end getInfo
 
 		getInfo();
-		setInterval(getInfo,10000);
 }
 
 function ytDisplay() {

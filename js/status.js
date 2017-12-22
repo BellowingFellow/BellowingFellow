@@ -43,16 +43,7 @@ $.ajax({
 		   console.log(data);
 
 		   if (data.stream) {
-		   document.getElementById('title').innerHTML = data.stream.channel.status;
        document.getElementById("player").src = "https://player.twitch.tv?channel=" + data.stream.channel.name + "&autoplay=false";
-		   if (data.stream.game == "Creative")
-		   {
-			   document.getElementById('streaminfo').textContent = "Being " + data.stream.game + " for " + data.stream.viewers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " viewers and " + data.stream.channel.followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " followers";
-		   }
-		   else{
-
-		   document.getElementById('streaminfo').textContent = "Playing " + data.stream.game + " for " + data.stream.viewers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " viewers and " + data.stream.channel.followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " followers";
-		   }
 
 		   } //endif stream
 		   else {
@@ -60,12 +51,8 @@ $.ajax({
 			}
 		 }
 		});
-
-
 		}
 		getHostInfo();
-		setInterval(getHostInfo,10000);
-
 	   }
 	 },
 	 error: function () {
